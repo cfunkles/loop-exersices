@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript sum of odd fibonacci numbers</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var sumOfOddFibonacci = 2;// Is set to two to account for 1+1 of sequence;
+		var previousVal = 1; //can't be zero for code to work
+		var currentVal = 1; //where we start
+		var tempVal = 0; //value doesn't matter 
+		while (currentVal < 2000000) {
+          	tempVal = currentVal;//our third variable to keep the old value from dissapearing
+			currentVal = tempVal + previousVal; //our new current value
+          	previousVal = currentVal - previousVal; //to always find our old value
+          	if (currentVal > 2000000) {
+              break;// without this code goes one step too far.
+            }
+          	if (currentVal % 2 !== 0) {//our odd checker
+          	sumOfOddFibonacci += currentVal;//the adder code.
+            }
+		}
+		console.log(sumOfOddFibonacci);//the result.
+	</script>
+</body>
+</html>

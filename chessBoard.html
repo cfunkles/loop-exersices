@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript Chess Board</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var size = 81; //grid size
+		var row = ""; //row variable
+		var numberOfRows = 0; //tracking even and odd rows
+		for (var i = 0; i < size; i++) { // builds the verticle grid
+		  	if (numberOfRows % 2 === 0) {
+		    	for (var j = 0; j < size; j++) {//runs the even numbered rows
+		        	if (row.length % 2 === 0) {
+		        		row += " ";
+		        	} else {
+		            	row += "#";
+		            }
+		        }
+		      	console.log(row);//logs row
+		      	row = ""; //resets row to be built again
+		      	numberOfRows++; //tracks verticle progress
+		    } else { 
+		      	for (var k = 0; k < size; k++) {//runs during odd numbered rows
+		      		if ( row.length % 2 === 0) {
+		              	row += "#";
+		            } else {
+		              	row += " ";
+		   			}
+		      	}
+		      	console.log(row); //same as above, executed during the else statement.
+		      	row = "";
+		      	numberOfRows++;
+		    } 
+		}
+	</script>
+</body>
+</html>

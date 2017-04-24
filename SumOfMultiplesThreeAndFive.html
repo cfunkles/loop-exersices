@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript sum of natural numbers</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var sumOfMultiples = 0; // the sum calculator
+		for (var i = 0; i < 1500; i++) { //the loop counts to 1500
+			if (i % 3 === 0 || i % 5 === 0) { // this checks for divisibility of 3 or 5, then executes code below.
+				sumOfMultiples += i; // the adder for each pass.
+			}
+		}
+		console.log(sumOfMultiples); // the result is 524250
+	</script>
+</body>
+</html>
