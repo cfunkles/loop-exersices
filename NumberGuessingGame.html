@@ -6,20 +6,36 @@
 </head>
 <body>
 	<script type="text/javascript">
-		var min = 0; //sets our min initial range.
-		var max = 100; //sets our max initial range.
-		var playAgain = prompt("Hey game player! Pick a number between 1 and 100, but don't tell me the answer. \n I will guess it \n If I guess it please put a Y for yes. \n If I don't guess right right off the bat, put an H for high if my guess is too high, and put an L for low if my guess is too low. \n Ready to play? Y = Yes N = N."); //directions for user on how to play.
-		while(playAgain === "Y") { //loop to be able to keep playing.
-			while(guess !== "Y") { //starts a loop that waits for the answer to be yes.
-				var avg = Math.floor((max + min) /2); //makes the average of Min and Max an integer.
-				var guess = prompt("is your number " + avg + "\n Put Y for Yes, L for guess to low, and H for guess to high"); //prompt after game has started, will guess 50 first time.
-				if (guess === "H") { //Block for high guess.
-					max = avg; //resets the max.
-				} else if (guess === "L") { //Block for low guess.
-					min = avg; //resets the min.
+		var min = 0; 
+		//sets our min initial range.
+		var max = 100; 
+		//sets our max initial range.
+		var playAgain = prompt("Hey game player! Pick a number between 1 and 100, but don't tell me the answer. If I guess it, put a Y for yes. If I don't guess it put a H if I'm too high and put an L if I'm too low.\n\nReady to play? Yes or No?"); 
+		//directions for user on how to play.
+		while (playAgain === "Yes") { 
+		//loop to be able to keep playing.
+			while (guess !== "Y") { 
+			//starts a loop that waits for the answer to be yes.
+				var avg = Math.floor((max + min) /2); 
+				//makes the average of Min and Max an integer.
+				var guess = prompt("My guess is " + avg + " Y = yes, H = High, L = Low"); 
+				//prompt after game has started, will guess 50 first time.
+				if (guess === "H") { 
+				//Block for high guess.
+					max = avg; 
+					//resets the max.
+				} else if (guess === "L") { 
+				//Block for low guess.
+					min = avg; 
+					//resets the min.
 				}
 			}
-			playAgain = prompt("Do you want to play again? \n Press Y for yes and N for no."); /* prompt to keep playing */ 
+			playAgain = prompt("Do you want to play again? Yes or No?"); 
+			// prompt to keep playing 
+			max = 100;
+			min = 0;
+			guess = false;
+			//resets all variables to play again.
 		}
 		
 	</script>
